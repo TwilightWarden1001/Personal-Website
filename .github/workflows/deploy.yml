@@ -10,12 +10,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Connect and deploy via SSH
-      uses: appleboy/ssh-action@master
-      with:
-        host: 198.199.87.49
-        username: root
-        key: ${{ secrets.DEPLOY_KEY }}
-        script: |
-          cd /var/www/html
-          git pull origin main
+      - name: Connect and deploy via SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: 198.199.87.49
+          username: root
+          key: ${{ secrets.DEPLOY_KEY }}
+          script: |
+            cd /var/www/html
+            git pull origin main
